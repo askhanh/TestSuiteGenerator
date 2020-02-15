@@ -1,0 +1,23 @@
+<suite name="Regression Test Suite" parallel="classes" preserve-order="true" thread-count="1">
+  <test name="Test1_txt">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="C:/Regression Test Suite/Test Suite/Test1.txt"/>
+      </class>
+    </classes>
+  </test>
+  <test name="Test2_txt">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="C:/Regression Test Suite/Test Suite/Test2.txt"/>
+      </class>
+    </classes>
+  </test>
+  <test name="Test3_txt">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="C:/Regression Test Suite/Test Suite/Test3.txt"/>
+      </class>
+    </classes>
+  </test>
+</suite>
