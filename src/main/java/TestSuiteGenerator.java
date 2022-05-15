@@ -9,6 +9,12 @@ import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FilenameFilter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.Locale;
 
 /**
  * The script is developed to read the file names from a directory and generate a Test Suite xml.
@@ -19,39 +25,53 @@ import java.io.File;
  */
 public class TestSuiteGenerator {
 
+    private static String FILE_LOCATION = System.getProperty("user.dir") + "\\src\\main\\resources\\TestFiles";
+
     //Provide the following details
-    private static String FILE_LOCATION = "C:\\Regression Test Suite\\Test Suite"; //copy paste the location
     private static String SUITE_NAME = "Regression Test Suite";
     private static String RUNNER_CLASS = "com.test.testSuite.Runner.";
 
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws Exception {
 
-        File[] xmlData = readFile();
-        createXML(xmlData);
+        File[] xmlData = readFile(FILE_LOCATION);
+        createXML(xmlData, SUITE_NAME, RUNNER_CLASS, FILE_LOCATION);
 
     }
 
 
     //Reads the file names from the location provided in FILE_LOCATION
-    static File[] readFile() {
+    static File[] readFile(String path) throws Exception {
 
-        String filePath = FILE_LOCATION.replace("\\", "/");
+        String filePath = path.replace("\\", "/");
         File folder = new File(filePath);
-        File[] listOfFiles = folder.listFiles();
 
-        for (File i : listOfFiles) {
-
-            System.out.println(i.getName());
+        //File Error handling
+        if (!(isDirectoryExists(filePath) && isDirectoryEmpty(filePath))) {
+            throw new Exception("Invalid Directory Path or Directory Empty !");
         }
-        System.out.println("Number of files found : " + listOfFiles.length);
 
-        return listOfFiles;
+        //Filter only for CSV Files
+        File[] listOfFiles = folder.listFiles(new FilenameFilter() {
+            @Override
+            public boolean accept(File file, String s) {
+                if (s.toLowerCase().endsWith(".csv")) {
+                    return true;
+                } else return false;
+            }
+        });
+        if (listOfFiles.length == 0) {
+
+            throw new FileNotFoundException("No CSV Files found ! ");
+        } else {
+            System.out.println("Number of CSV files found : " + listOfFiles.length);
+            return listOfFiles;
+        }
 
     }
 
     //Create XML file
-    static void createXML(File[] data) {
+    static void createXML(File[] data, String suiteName, String runnerClass, String path) {
         try {
 
             DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
@@ -61,7 +81,7 @@ public class TestSuiteGenerator {
             //rootElement : suiteTag
             Element suiteTag = doc.createElement("suite");
             doc.appendChild(suiteTag);
-            suiteTag.setAttribute("name", SUITE_NAME);
+            suiteTag.setAttribute("name", suiteName);
             suiteTag.setAttribute("preserve-order", "true");
             suiteTag.setAttribute("parallel", "classes");
             suiteTag.setAttribute("thread-count", "1");
@@ -84,13 +104,13 @@ public class TestSuiteGenerator {
                 //class tag
                 Element classTag = doc.createElement("class");
                 classesTag.appendChild(classTag);
-                classTag.setAttribute("name", RUNNER_CLASS);
+                classTag.setAttribute("name", runnerClass);
 
                 //parameter tag
                 Element parameterTag = doc.createElement("parameter");
                 classTag.appendChild(parameterTag);
                 parameterTag.setAttribute("name", "scriptPath");
-                parameterTag.setAttribute("value", FILE_LOCATION.replace("\\", "/")+"/" + data[i].getName());
+                parameterTag.setAttribute("value", path.replace("\\", "/") + "/" + data[i].getName());
 
             }
 
@@ -101,11 +121,11 @@ public class TestSuiteGenerator {
             transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("D:\\" + SUITE_NAME.replace(" ", "") + ".xml"));
+            StreamResult result = new StreamResult(new File(System.getProperty("user.dir") + "\\src\\main\\resources\\TestFiles\\" + suiteName.replace(" ", "") + ".xml"));
 
             transformer.transform(source, result);
 
-            System.out.println(SUITE_NAME.replace(" ", "") + ".xml is saved on drive D:");
+            System.out.println(suiteName.replace(" ", "") + ".xml is saved on drive " + System.getProperty("user.dir") + "\\src\\main\\resources\\TestFiles\\");
 
         } catch (ParserConfigurationException pce) {
             pce.printStackTrace();
@@ -113,6 +133,21 @@ public class TestSuiteGenerator {
             tfe.printStackTrace();
         }
 
+    }
+
+    public static boolean isDirectoryExists(String directoryPath) {
+        if (!Paths.get(directoryPath).toFile().isDirectory()) {
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isDirectoryEmpty(String directoryPath) {
+        File file = new File(directoryPath);
+        if (file.list().length > 0) {
+            return true;
+        }
+        return false;
     }
 
 }

@@ -1,0 +1,184 @@
+<suite name="Regression Test Suite" parallel="classes" preserve-order="true" thread-count="1">
+  <test name="a_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/a.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="b_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/b.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="c_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/c.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="d_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/d.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="e_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/e.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="f_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/f.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="g_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/g.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="h_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/h.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="i_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/i.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="j_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/j.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="k_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/k.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="l_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/l.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="m_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/m.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="n_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/n.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="o_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/o.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="p_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/p.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="q_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/q.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="r_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/r.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="s_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/s.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="t_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/t.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="u_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/u.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="v_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/v.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="w_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/w.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="x_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/x.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="y_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/y.csv"/>
+      </class>
+    </classes>
+  </test>
+  <test name="z_csv">
+    <classes>
+      <class name="com.test.testSuite.Runner.">
+        <parameter name="scriptPath" value="D:/BitBucket/testsuitegenerator/src/main/resources/TestFiles/z.csv"/>
+      </class>
+    </classes>
+  </test>
+</suite>
